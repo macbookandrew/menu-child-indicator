@@ -47,5 +47,9 @@ Screenshot of the indicator:
 
 == Changelog ==
 
+= 1.1 =
+* Updated readme with sample css
+* Use local or pre-loaded jQuery instead of Google-hosted jQuery to avoid loading two instances
+
 = 1.0 =
 * First version
