@@ -3,9 +3,9 @@
 Plugin Name: Menu Child Indicator
 Plugin URI: http://github.com/macbookandrew/Menu-Child-Indicator
 Description: Adds the css class .has-children to menu items that have a submenu to allow css styling
-Version: 1.1.2
+Version: 1.1.3
 Author: Andrew Minion
-Author URI: http://minionsformissions.com/
+Author URI: http://andrewrminion.com/
 License: GPL2
 */
 
