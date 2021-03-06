@@ -29,7 +29,7 @@ This plugin adds the css class `.has-children` to menu items that have a submenu
 * What style to you use for your indicator?
 * Glad you asked! See the css block below:
 
-```css
+```
     .menu .children .has-children::after {
     	content: "\00a0\bb";
     	position: absolute;
