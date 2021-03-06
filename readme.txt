@@ -17,7 +17,7 @@ This plugin adds the css class `.has-children` to menu items that have a submenu
 
 == Installation ==
 
-1. Upload menu-child-indicator.php to the `/wp-content/plugins/` directory
+1. Upload `menu-child-indicator.php` file to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Add styles with the CSS rule `.menu .children .has-children` (Hint: use the pseudo-element `::after` along with `content: "\00a0\bb";` to add a double arrow pointing to the right.)
 4. That's it!
