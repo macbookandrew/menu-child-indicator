@@ -1,31 +1,39 @@
 <?php
-/*
-Plugin Name: Menu Child Indicator
-Plugin URI: http://github.com/macbookandrew/Menu-Child-Indicator
-Description: Adds the css class .has-children to menu items that have a submenu to allow css styling
-Version: 1.1.3
-Author: Andrew Minion
-Author URI: http://andrewrminion.com/
-License: GPL2
-*/
+/**
+ * Plugin Name: Menu Child Indicator
+ * Plugin URI: http://github.com/macbookandrew/Menu-Child-Indicator
+ * Description: Adds the css class .has-children to menu items that have a submenu to allow css styling
+ * Version: 1.1.4
+ * Author: Andrew Minion
+ * Author URI: http://andrewrminion.com/
+ * License: GPL2
+ *
+ * @package menu-child-indicator
+ */
 
-// load up jQuery
+/**
+ * Ensure jQuery is enqueued.
+ *
+ * @return void
+ */
 function armd_scripts_method() {
-    wp_enqueue_script( 'jquery' );
-}    
- 
-add_action('wp_enqueue_scripts', 'armd_scripts_method');
-
-
-// add the indicator
-function armd_add_indicator() {
-	echo '<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(\'.menu li:has(".children")\').addClass(\'has-children\');
-		});
-	</script>
-';
+	wp_enqueue_script( 'jquery' );
 }
+add_action( 'wp_enqueue_scripts', 'armd_scripts_method' );
 
-add_action('wp_head', 'armd_add_indicator');
-?>
+
+/**
+ * Enqueue our JS.
+ *
+ * @return void
+ */
+function armd_add_indicator() {
+	wp_add_inline_script(
+		'jquery',
+		'jQuery(document).ready(function($) {
+			$(\'.menu li:has(".children")\').addClass(\'has-children\');
+		});',
+		'after'
+	);
+}
+add_action( 'wp_head', 'armd_add_indicator' );
